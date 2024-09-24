@@ -17,7 +17,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - run: cat xxx.txt
+    # - run: cat xxx.txt
   
     # これはcommitの詳細を　投げるやつなので不採用
     # - uses: toko-bifrost/ms-teams-deploy-card@master
@@ -162,14 +162,15 @@ jobs:
     #         ]
     #       }
 
-    # - name: Microsoft Teams Notification
-    #   uses: skitionek/notify-microsoft-teams@master
-    #   if: success()
-    #   with:
-    #     webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-    #     needs: ${{ toJson(needs) }}
-    #     job: ${{ toJson(job) }}
-    #     steps: ${{ toJson(steps) }}
+    - name: Microsoft Teams Notification
+      # uses: skitionek/notify-microsoft-teams@master
+      uses: ./.github/actions/notify-microsoft-teams
+      if: success()
+      with:
+        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+        needs: ${{ toJson(needs) }}
+        job: ${{ toJson(job) }}
+        steps: ${{ toJson(steps) }}
     
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
