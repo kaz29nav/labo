@@ -13,8 +13,39 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - uses: toko-bifrost/ms-teams-deploy-card@master #  or "./" if in a local set-up
+    # これはcommitの詳細を　投げつやつなので不採用
+    # - uses: toko-bifrost/ms-teams-deploy-card@master
+    #   if: always()
+    #   with:
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
+    #     webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+  
+    - name: Microsoft Teams Notification
+      uses: skitionek/notify-microsoft-teams@master
       if: always()
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+        raw: >-
+          {
+            "type": "message",
+            "attachments":
+            [
+              {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content":
+                {
+                  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                  "type": "AdaptiveCard",
+                    "body":
+                    [
+                      {
+                          "type": "TextBlock",
+                          "text": "## Workflow経由のTeamsへの通知テストです。\n\n* 通知の詳細1です。\n* 通知の詳細2です。 @WatanabeKazuhi",
+                          "wrap": true,
+                          "markdown": true
+                      }
+                    ]
+                }
+              }
+            ]
+          }
