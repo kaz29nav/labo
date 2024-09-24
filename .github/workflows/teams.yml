@@ -41,7 +41,7 @@ jobs:
                         "text": "## Workflow経由のTeamsへの通知テストです。\n\n* 通知の詳細1です。\n* 通知の詳細2です。",
                         "wrap": true,
                         "markdown": true
-                  }],
+                  }]
                 }
               }
             ]
