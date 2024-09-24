@@ -16,6 +16,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+    - name: Checkout action repository
+      uses: actions/checkout@v2
+      with:
+        repository: j-com-dev/notify-microsoft-teams
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: ./notify-microsoft-teams
 
     # - run: cat xxx.txt
   
@@ -164,7 +170,7 @@ jobs:
 
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
-      uses: ./.github/actions/notify-microsoft-teams
+      uses: ./notify-microsoft-teams
       if: success()
       with:
         webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
@@ -174,7 +180,7 @@ jobs:
     
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
-      uses: ./.github/actions/notify-microsoft-teams
+      uses: ./notify-microsoft-teams
       if: failure()
       with:
         webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
