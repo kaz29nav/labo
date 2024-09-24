@@ -12,7 +12,8 @@ const {
     compare,
     sender = {
       login: placeholder,
-      url: placeholder
+      url: placeholder,
+      avatar_url: placeholder,
     },
     commits = [],
     head_commit = {
@@ -26,7 +27,6 @@ const {
   },
   eventName,
   workflow,
-  run_id = placeholder,
 } = github;
 
 const statuses = [{
@@ -245,11 +245,6 @@ class MSTeams {
           title: `PR #${pull_request.number}`,
           url: pull_request.html_url
         },
-        {
-          type: 'Action.OpenUrl',
-          title: `JOB #${run_id}`,
-          url: `${repository.html_url}//actions/runs/${run_id}`,
-        },
       ]
     };
 
@@ -263,7 +258,6 @@ class MSTeams {
           type: 'AdaptiveCard',
           body: [
             headerTitle,
-            repositoryLink,
             ...commitChangeLog,
             ...steps_summary,
             ...needs_summary,
