@@ -22,12 +22,16 @@ jobs:
         repository: j-com-dev/notify-microsoft-teams
         token: ${{ secrets.ACTIONS_READ_PAT }}
         path: ./notify-microsoft-teams
-  
+    - run: |
+        pwd
+        ls -la
+        ls -la notify-microsoft-teams
+
     - name: Upload action stript into artifact
       uses: actions/upload-artifact@v4
       with:
         name: notify-microsoft-teams
-        path: notify-microsoft-teams/*
+        path: ./notify-microsoft-teams/*
 
     # - run: cat xxx.txt
   
@@ -41,6 +45,7 @@ jobs:
       with:
         name: notify-microsoft-teams
     - run: |
+        pwd
         ls -la
         ls -la notify-microsoft-teams
     - name: Microsoft Teams Notification
