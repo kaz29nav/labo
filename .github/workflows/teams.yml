@@ -4,7 +4,11 @@ on:
   push:
     branches: 
       - main
-
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    
 jobs:
   teams-webhook-test:
     name: Teams webhook test
@@ -13,7 +17,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # これはcommitの詳細を　投げつやつなので不採用
+    # これはcommitの詳細を　投げるやつなので不採用
     # - uses: toko-bifrost/ms-teams-deploy-card@master
     #   if: always()
     #   with:
@@ -48,16 +52,6 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "**ボールド**",
-                    "wrap": true,
-                    "markdown": true
-                  },{
-                    "type": "TextBlock",
-                    "text": "[JCOM](https://www.jcom.co.jp/)",
-                    "wrap": true,
-                    "markdown": true
-                  },{
-                    "type": "TextBlock",
                     "text": "<at>watanabekazuhi@jupiter.jcom.co.jp</at>"
                   }],
                   "msteams": {
@@ -71,7 +65,16 @@ jobs:
                         }
                       }
                     ]
-                  }
+                  },
+                  "actions": [{
+                    "type": "openUrl",
+                    "title": "PR #${{ github.event.pull_request.id }} (${{ github.event.pull_request.title }})",
+                    "value": "${{ github.event.pull_request.html_url }}"
+                  }, {
+                    "type": "openUrl",
+                    "title": "Current Job",
+                    "value": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  }]
                 }
               }
             ]
