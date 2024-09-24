@@ -38,7 +38,7 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "## Workflow経由のTeamsへの通知テストです。\n\n* 通知の詳細1です。\n* 通知の詳細2です。\n",
+                    "text": "## Workflow経由のTeamsへの通知テストです。\\n\\n* 通知の詳細1です。\\n* 通知の詳細2です。\\n",
                     "wrap": true,
                     "markdown": true
                   },{
