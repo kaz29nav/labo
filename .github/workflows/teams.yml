@@ -84,7 +84,7 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "# \"${{ github.workflow }}\" 実行中にエラーが発生しました",
+                    "text": "# **${{ github.workflow }}** 実行中にエラーが発生しました",
                     "wrap": true,
                     "markdown": true
                   },{
