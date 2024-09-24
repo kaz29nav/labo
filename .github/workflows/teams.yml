@@ -43,19 +43,19 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "<at>watanabekazuhi.jupiter.jcom.co.jp</at>"
+                    "text": "<at>watanabekazuhi@jupiter.jcom.co.jp</at>"
                   }],
                   "msteams": {
                     "entities": [
                       {
                         "type": "mention",
-                        "text": "<at>watanabekazuhi.jupiter.jcom.co.jp</at>",
+                        "text": "<at>watanabekazuhi@jupiter.jcom.co.jp</at>",
                         "mentioned": {
-                          "id": "watanabekazuhi.jupiter.jcom.co.jp",
-                          "name": "watanabekazuhi.jupiter.jcom.co.jp"
+                          "id": "watanabekazuhi@jupiter.jcom.co.jp",
+                          "name": "watanabekazuhi@jupiter.jcom.co.jp"
                         }
                       }
-                    ],
+                    ]
                   }
                 }
               }
