@@ -179,3 +179,4 @@ jobs:
         job: ${{ toJson(job) }}
         steps: ${{ toJson(steps) }}
         msteams_emails: "watanabekazuhi@jupiter.jcom.co.jp"
+        title: "**${{ github.workflow }}** 実行中にエラーが発生しました"
