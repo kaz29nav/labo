@@ -1,0 +1,20 @@
+name: Teams webhook test
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  teams-webhook-test:
+    name: Teams webhook test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - uses: toko-bifrost/ms-teams-deploy-card@master #  or "./" if in a local set-up
+      if: always()
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
