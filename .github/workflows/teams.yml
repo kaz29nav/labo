@@ -52,12 +52,12 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
+                    "text": "## [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
                     "wrap": true,
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
+                    "text": "## [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
                     "wrap": true,
                     "markdown": true
                   }]
@@ -94,12 +94,12 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
+                    "text": "## [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
                     "wrap": true,
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
+                    "text": "## [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
                     "wrap": true,
                     "markdown": true
                   },{
