@@ -17,7 +17,15 @@ const {
     commits = [],
     head_commit = {
       timestamp: placeholder
-    }
+    },
+    event = {
+      number: placeholder,
+      pull_request: {
+        html_url: placeholder,
+        title: placeholder,
+      },
+    },
+    run_id,
   },
   eventName,
   workflow
@@ -236,9 +244,14 @@ class MSTeams {
         },
         {
           type: 'Action.OpenUrl',
-          title: 'Compare',
-          url: compare
-        }
+          title: `PR #${event.number}`,
+          url: event.pull_request.html_url
+        },
+        {
+          type: 'Action.OpenUrl',
+          title: `JOB #${run_id}`,
+          url: `${repository.html_url}//actions/runs/${run_id}`,
+        },
       ]
     };
 
