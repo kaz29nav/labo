@@ -76,7 +76,13 @@ jobs:
         needs: ${{ toJson(needs) }}
         job: ${{ toJson(job) }}
         steps: ${{ toJson(steps) }}
-      
+
+    - name: Microsoft Teams Notification
+      uses: skitionek/notify-microsoft-teams@master
+      if: failure()
+      with:
+        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+
     # - name: Microsoft Teams Notification
     #   uses: skitionek/notify-microsoft-teams@master
     #   if: failure()
@@ -133,14 +139,3 @@ jobs:
     #           }
     #         ]
     #       }
-
-  if_failure:
-    name: Only if failure
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Microsoft Teams Notification
-        uses: skitionek/notify-microsoft-teams@master
-        if: failure()
-        with:
-          webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
