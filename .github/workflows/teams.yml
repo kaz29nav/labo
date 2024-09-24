@@ -42,12 +42,12 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "# **${{ github.repository }} / ${{ github.workflow }}** が正常に終了しました",
+                    "text": "# 🟢🟢🟢**${{ github.repository }} - ${{ github.workflow }}** が正常に終了しました🟢🟢🟢",
                     "wrap": true,
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [PR #${{ github.event.number }} (${{ github.event.pull_request.title }})](${{ github.event.pull_request.html_url }})",
+                    "text": "* [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
                     "wrap": true,
                     "markdown": true
                   },{
@@ -79,12 +79,12 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "# **${{ github.workflow }}** 実行中にエラーが発生しました",
+                    "text": "# 🔴🔴🔴**${{ github.repository }} - ${{ github.workflow }}** 実行中にエラーが発生しました🔴🔴🔴",
                     "wrap": true,
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [PR #${{ github.event.number }} (${{ github.event.pull_request.title }})](${{ github.event.pull_request.html_url }})",
+                    "text": "* [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
                     "wrap": true,
                     "markdown": true
                   },{
