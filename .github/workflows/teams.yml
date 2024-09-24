@@ -48,6 +48,16 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
+                    "text": "**ボールド**",
+                    "wrap": true,
+                    "markdown": true
+                  },{
+                    "type": "TextBlock",
+                    "text": "[JCOM](https://www.jcom.co.jp/)",
+                    "wrap": true,
+                    "markdown": true
+                  },{
+                    "type": "TextBlock",
                     "text": "<at>watanabekazuhi@jupiter.jcom.co.jp</at>"
                   }],
                   "msteams": {
