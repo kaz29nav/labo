@@ -24,47 +24,47 @@ jobs:
     #     github-token: ${{ secrets.GITHUB_TOKEN }}
     #     webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
   
-    - name: Microsoft Teams Notification
-      uses: skitionek/notify-microsoft-teams@master
-      if: success()
-      with:
-        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-        raw: >-
-          {
-            "type": "message",
-            "attachments":
-            [
-              {
-                "contentType": "application/vnd.microsoft.card.adaptive",
-                "content":
-                {
-                  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                  "type": "AdaptiveCard",
-                  "body":[{
-                    "type": "TextBlock",
-                    "text": "# 🟢🟢🟢🟢🟢🟢",
-                    "wrap": true,
-                    "markdown": true
-                  },{
-                    "type": "TextBlock",
-                    "text": "# **${{ github.repository }} - ${{ github.workflow }}** が正常に終了しました",
-                    "wrap": true,
-                    "markdown": true
-                  },{
-                    "type": "TextBlock",
-                    "text": "## [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
-                    "wrap": true,
-                    "markdown": true
-                  },{
-                    "type": "TextBlock",
-                    "text": "## [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
-                    "wrap": true,
-                    "markdown": true
-                  }]
-                }
-              }
-            ]
-          }
+    # - name: Microsoft Teams Notification
+    #   uses: skitionek/notify-microsoft-teams@master
+    #   if: success()
+    #   with:
+    #     webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+    #     raw: >-
+    #       {
+    #         "type": "message",
+    #         "attachments":
+    #         [
+    #           {
+    #             "contentType": "application/vnd.microsoft.card.adaptive",
+    #             "content":
+    #             {
+    #               "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    #               "type": "AdaptiveCard",
+    #               "body":[{
+    #                 "type": "TextBlock",
+    #                 "text": "# 🟢🟢🟢🟢🟢🟢",
+    #                 "wrap": true,
+    #                 "markdown": true
+    #               },{
+    #                 "type": "TextBlock",
+    #                 "text": "# **${{ github.repository }} - ${{ github.workflow }}** が正常に終了しました",
+    #                 "wrap": true,
+    #                 "markdown": true
+    #               },{
+    #                 "type": "TextBlock",
+    #                 "text": "## [PR #${{ github.event.number }} ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})",
+    #                 "wrap": true,
+    #                 "markdown": true
+    #               },{
+    #                 "type": "TextBlock",
+    #                 "text": "## [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
+    #                 "wrap": true,
+    #                 "markdown": true
+    #               }]
+    #             }
+    #           }
+    #         ]
+    #       }
 
     - name: Microsoft Teams Notification
       uses: skitionek/notify-microsoft-teams@master
