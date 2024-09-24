@@ -17,7 +17,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Checkout action repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: j-com-dev/notify-microsoft-teams
         token: ${{ secrets.ACTIONS_READ_PAT }}
@@ -39,7 +39,32 @@ jobs:
     needs: teams-webhook-test
     steps:
     - run: cat xxx.txt
-  
+    - name: Download bicep script from artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: notify-microsoft-teams
+        path: ./notify-microsoft-teams
+    - name: Microsoft Teams Notification
+      # uses: skitionek/notify-microsoft-teams@master
+      uses: ./notify-microsoft-teams
+      if: success()
+      with:
+        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+        needs: ${{ toJson(needs) }}
+        job: ${{ toJson(job) }}
+        steps: ${{ toJson(steps) }}
+    
+    - name: Microsoft Teams Notification
+      # uses: skitionek/notify-microsoft-teams@master
+      uses: ./notify-microsoft-teams
+      if: failure()
+      with:
+        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+        job: ${{ toJson(job) }}
+        steps: ${{ toJson(steps) }}
+        msteams_emails: "watanabekazuhi@jupiter.jcom.co.jp"
+        title: "**${{ github.workflow }}** 実行中にエラーが発生しました"
+
   notify:
     name: Teams webhook test(notify)
     runs-on: ubuntu-latest
