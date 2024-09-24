@@ -41,8 +41,8 @@ jobs:
       with:
         name: notify-microsoft-teams
     - run: |
-        ls -la notify-microsoft-teams
         ls -la
+        ls -la notify-microsoft-teams
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
       uses: ./notify-microsoft-teams
