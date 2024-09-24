@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: j-com-dev/notify-microsoft-teams
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ACTIONS_READ_PAT }}
         path: ./notify-microsoft-teams
 
     # - run: cat xxx.txt
