@@ -37,11 +37,22 @@ jobs:
                   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
                   "type": "AdaptiveCard",
                   "body":[{
-                    "type": "TextBlock",
-                    "text": "## Workflow経由のTeamsへの通知テストです。\n\n* 通知の詳細1です。\n* 通知の詳細2です。",
-                    "wrap": true,
-                    "markdown": true
+                        "type": "TextBlock",
+                        "text": "## Workflow経由のTeamsへの通知テストです。\n\n* 通知の詳細1です。\n* 通知の詳細2です。 @WatanabeKazuhi",
+                        "wrap": true,
+                        "markdown": true
                   }],
+                  "msteams": {
+                    "entities": [
+                      {
+                        "type": "mention",
+                        "text": "<at>watanabekazuhi.jupiter.jcom.co.jp</at>",
+                        "mentioned": {
+                          "name": "Watanabe Kazuhiro"
+                        }
+                      }
+                    ]
+                  }
                 }
               }
             ]
