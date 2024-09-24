@@ -131,7 +131,7 @@ jobs:
                       {
                         "type": "Action.OpenUrl",
                         "title": "Repository",
-                        "url": "${{ github.event.repository.url }}"
+                        "url": "${{ github.event.repository.html_url }}"
                       },
                       {
                         "type": "Action.OpenUrl",
@@ -172,7 +172,8 @@ jobs:
     #     steps: ${{ toJson(steps) }}
     
     - name: Microsoft Teams Notification
-      uses: skitionek/notify-microsoft-teams@master
+      # uses: skitionek/notify-microsoft-teams@master
+      uses: ./.github/actions/notify-microsoft-teams
       if: failure()
       with:
         webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
