@@ -43,7 +43,7 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "<at>watanabekazuhi.jupiter.jcom.co.jp</at>",
+                    "text": "<at>watanabekazuhi.jupiter.jcom.co.jp</at>"
                   }],
                 }
               }
