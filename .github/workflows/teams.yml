@@ -11,7 +11,7 @@ on:
     
 jobs:
   teams-webhook-test:
-    name: Teams webhook test
+    name: Teams webhook test(clone)
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -33,12 +33,17 @@ jobs:
         name: notify-microsoft-teams
         path: ./notify-microsoft-teams/*
 
-    # - run: cat xxx.txt
-  
-  notify:
-    name: Teams webhook test
+  dosomething:
+    name: Error
     runs-on: ubuntu-latest
     needs: teams-webhook-test
+    steps:
+    - run: cat xxx.txt
+  
+  notify:
+    name: Teams webhook test(notify)
+    runs-on: ubuntu-latest
+    needs: dosomething
     steps:
     - name: Download bicep script from artifact
       uses: actions/download-artifact@v4
