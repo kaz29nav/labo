@@ -1371,14 +1371,14 @@ const {
     head_commit = {
       timestamp: placeholder
     },
-    event = {
+    pull_request = {
+      html_url: placeholder,
       number: placeholder,
-      pull_request: {
-        html_url: placeholder,
-        title: placeholder,
-      },
+      body: placeholder,
     },
-    run_id,
+    workflow_run = {
+      id: placeholder,
+    },
   },
   eventName,
   workflow
@@ -1597,13 +1597,13 @@ class MSTeams {
         },
         {
           type: 'Action.OpenUrl',
-          title: `PR #${event.number}`,
-          url: event.pull_request.html_url
+          title: `PR #${pull_request.number}`,
+          url: pull_request.html_url
         },
         {
           type: 'Action.OpenUrl',
-          title: `JOB #${run_id}`,
-          url: `${repository.html_url}//actions/runs/${run_id}`,
+          title: `JOB #${workflow_run.id}`,
+          url: `${repository.html_url}//actions/runs/${workflow_run.id}`,
         },
       ]
     };
