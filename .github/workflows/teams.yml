@@ -42,7 +42,12 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "# 🟢🟢🟢**${{ github.repository }} - ${{ github.workflow }}** が正常に終了しました🟢🟢🟢",
+                    "text": "# 🟢🟢🟢🟢🟢🟢",
+                    "wrap": true,
+                    "markdown": true
+                  },{
+                    "type": "TextBlock",
+                    "text": "# **${{ github.repository }} - ${{ github.workflow }}** が正常に終了しました",
                     "wrap": true,
                     "markdown": true
                   },{
@@ -79,7 +84,12 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "# 🔴🔴🔴**${{ github.repository }} - ${{ github.workflow }}** 実行中にエラーが発生しました🔴🔴🔴",
+                    "text": "# 🔴🔴🔴🔴🔴🔴",
+                    "wrap": true,
+                    "markdown": true
+                  },{
+                    "type": "TextBlock",
+                    "text": "# **${{ github.repository }} - ${{ github.workflow }}** 実行中にエラーが発生しました",
                     "wrap": true,
                     "markdown": true
                   },{
