@@ -44,6 +44,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: notify-microsoft-teams
+        path: ./notify-microsoft-teams
     - run: |
         pwd
         ls -la
