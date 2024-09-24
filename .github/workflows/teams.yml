@@ -171,11 +171,11 @@ jobs:
     #     job: ${{ toJson(job) }}
     #     steps: ${{ toJson(steps) }}
     
-    # - name: Microsoft Teams Notification
-    #   uses: skitionek/notify-microsoft-teams@master
-    #   if: failure()
-    #   with:
-    #     webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-    #     job: ${{ toJson(job) }}
-    #     steps: ${{ toJson(steps) }}
-    
+    - name: Microsoft Teams Notification
+      uses: skitionek/notify-microsoft-teams@master
+      if: failure()
+      with:
+        webhook_url: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+        job: ${{ toJson(job) }}
+        steps: ${{ toJson(steps) }}
+        msteams_emails: "watanabekazuhi@jupiter.jcom.co.jp"
