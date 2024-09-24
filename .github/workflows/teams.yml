@@ -40,7 +40,9 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: notify-microsoft-teams
-
+    - run: |
+        ls -la notify-microsoft-teams
+        ls -la
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
       uses: ./notify-microsoft-teams
