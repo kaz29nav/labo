@@ -42,7 +42,7 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-                    "text": "# **${{ github.workflow }}** が正常に終了しました",
+                    "text": "# **${{ github.repository.name }} / ${{ github.workflow }}** が正常に終了しました",
                     "wrap": true,
                     "markdown": true
                   },{
