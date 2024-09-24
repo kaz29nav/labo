@@ -22,6 +22,12 @@ jobs:
         repository: j-com-dev/notify-microsoft-teams
         token: ${{ secrets.ACTIONS_READ_PAT }}
         path: ./notify-microsoft-teams
+  
+    - name: Upload action stript into artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: notify-microsoft-teams
+        path: notify-microsoft-teams/*
 
     # - run: cat xxx.txt
   
@@ -29,6 +35,11 @@ jobs:
     name: Teams webhook test
     runs-on: ubuntu-latest
     steps:
+    - name: Download bicep script from artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: notify-microsoft-teams
+
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
       uses: ./notify-microsoft-teams
