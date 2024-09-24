@@ -47,7 +47,7 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* [PR #${{ github.event.pull_request.node_id }} (${{ github.event.pull_request.title }})](${{ github.event.pull_request.html_url }})",
+                    "text": "* [PR #${{ github.event.number }} (${{ github.event.pull_request.title }})](${{ github.event.pull_request.html_url }})",
                     "wrap": true,
                     "markdown": true
                   },{
