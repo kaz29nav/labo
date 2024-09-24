@@ -44,6 +44,7 @@ jobs:
     name: Teams webhook test(notify)
     runs-on: ubuntu-latest
     needs: dosomething
+    if: always()
     steps:
     - name: Download bicep script from artifact
       uses: actions/download-artifact@v4
