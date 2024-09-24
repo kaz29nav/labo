@@ -47,7 +47,12 @@ jobs:
                     "markdown": true
                   },{
                     "type": "TextBlock",
-                    "text": "* 通知の詳細1です。",
+                    "text": "* [PR #${{ github.event.pull_request.id }} (${{ github.event.pull_request.title }})](${{ github.event.pull_request.html_url }})",
+                    "wrap": true,
+                    "markdown": true
+                  },{
+                    "type": "TextBlock",
+                    "text": "* [JOB #${{ github.run_id }})](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})",
                     "wrap": true,
                     "markdown": true
                   },{
@@ -65,16 +70,7 @@ jobs:
                         }
                       }
                     ]
-                  },
-                  "actions": [{
-                    "type": "openUrl",
-                    "title": "PR #${{ github.event.pull_request.id }} (${{ github.event.pull_request.title }})",
-                    "value": "${{ github.event.pull_request.html_url }}"
-                  }, {
-                    "type": "openUrl",
-                    "title": "Current Job",
-                    "value": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-                  }]
+                  }
                 }
               }
             ]
