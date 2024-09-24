@@ -38,6 +38,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: teams-webhook-test
     steps:
+    - name: Download bicep script from artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: notify-microsoft-teams
+        path: ./notify-microsoft-teams
     - run: cat xxx.txt
     - name: Download bicep script from artifact
       uses: actions/download-artifact@v4
