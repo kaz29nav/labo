@@ -52,9 +52,9 @@ jobs:
                         "text": "<at>watanabekazuhi.jupiter.jcom.co.jp</at>",
                         "mentioned": {
                           "id": "watanabekazuhi.jupiter.jcom.co.jp",
-                          "name": "watanabekazuhi.jupiter.jcom.co.jp",
-                        },
-                      },
+                          "name": "watanabekazuhi.jupiter.jcom.co.jp"
+                        }
+                      }
                     ],
                   }
                 }
