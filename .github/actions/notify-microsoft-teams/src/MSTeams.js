@@ -23,10 +23,10 @@ const {
       number: placeholder,
       body: placeholder,
     },
-    job = placeholder,
   },
   eventName,
-  workflow
+  workflow,
+  run_id = placeholder,
 } = github;
 
 const statuses = [{
@@ -247,8 +247,8 @@ class MSTeams {
         },
         {
           type: 'Action.OpenUrl',
-          title: `JOB #${job}`,
-          url: `${repository.html_url}//actions/runs/${job}`,
+          title: `JOB #${run_id}`,
+          url: `${repository.html_url}//actions/runs/${run_id}`,
         },
       ]
     };
