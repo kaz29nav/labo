@@ -38,7 +38,12 @@ jobs:
                   "type": "AdaptiveCard",
                   "body":[{
                     "type": "TextBlock",
-          "text": "## Workflow経由のTeamsへの通知テストです。\\r* 通知の詳細1です。\\r* 通知の詳細2です。\\r<at>watanabekazuhi@jupiter.jcom.co.jp</at>",
+                    "text": "## Workflow経由のTeamsへの通知テストです。",
+                    "wrap": true,
+                    "markdown": true
+                  },{
+                    "type": "TextBlock",
+                    "text": "* 通知の詳細1です。",
                     "wrap": true,
                     "markdown": true
                   },{
