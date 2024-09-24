@@ -23,9 +23,7 @@ const {
       number: placeholder,
       body: placeholder,
     },
-    workflow_run = {
-      id: placeholder,
-    },
+    run_id = placeholder,
   },
   eventName,
   workflow
@@ -249,8 +247,8 @@ class MSTeams {
         },
         {
           type: 'Action.OpenUrl',
-          title: `JOB #${workflow_run.id}`,
-          url: `${repository.html_url}//actions/runs/${workflow_run.id}`,
+          title: `JOB #${run_id}`,
+          url: `${repository.html_url}//actions/runs/${run_id}`,
         },
       ]
     };
