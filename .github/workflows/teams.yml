@@ -59,6 +59,7 @@ jobs:
         job: ${{ toJson(job) }}
         steps: ${{ toJson(steps) }}
         custom_action: action_required
+        custom_message: 'カスタムメッセージです、こんな感じでカスタマイズできますよ'
     
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
