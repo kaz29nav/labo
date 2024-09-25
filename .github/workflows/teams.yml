@@ -58,6 +58,7 @@ jobs:
         needs: ${{ toJson(needs) }}
         job: ${{ toJson(job) }}
         steps: ${{ toJson(steps) }}
+        custom_action: action_required
     
     - name: Microsoft Teams Notification
       # uses: skitionek/notify-microsoft-teams@master
